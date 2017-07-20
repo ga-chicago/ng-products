@@ -1,4 +1,5 @@
 <div>
+  <button (click)="showPostForm = !showPostForm">New</button>
   <div *ngIf="showPostForm">
     <input [(ngModel)]="newRaincoat.name" placeholder="Name"/>
     <input [(ngModel)]="newRaincoat.size" placeholder="Size"/>
