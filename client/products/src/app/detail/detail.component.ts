@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 class Raincoat{
   id: number;
@@ -17,21 +17,24 @@ class Raincoat{
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
+
 export class DetailComponent implements OnInit {
   raincoat: Raincoat = new Raincoat();
 
-  constructor(private http: Http, private route: ActivatedRoute) {
-    let id = this.route.snapshot.params;
+  constructor(private route: ActivatedRoute, private http: Http) {
+    let id = this.route.snapshot.params.id;
     this.getRaincoat(id);
   }
 
   ngOnInit() {
   }
 
-  getRaincoat(raincoat){
-    this.http.get('http://localhost:9393/raincoats/' + raincoat.id).subscribe(response=>
+  getRaincoat(id){
+    this.http.get('http://localhost:9393/raincoats/' + id).subscribe(response =>
       this.raincoat = response.json()
     )
   }
+
+
 
 }

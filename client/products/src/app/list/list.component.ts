@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router'
 
 class Raincoat{
@@ -63,6 +62,6 @@ export class ListComponent {
   }
 
   goToRaincoat(raincoat){
-    this.router.navigate(['/raincoats/',raincoat.id])
+    this.router.navigate(['/raincoats/', raincoat.id])
   }
 }
