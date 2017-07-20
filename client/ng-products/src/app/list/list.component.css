@@ -1,8 +1,3 @@
-td{
-  border: 1px solid black;
-}
-table{
-  margin-top: 50px;
-  width: 100%;
-  border: 1px solid black;
+body{
+  background: red;
 }

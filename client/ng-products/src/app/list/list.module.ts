@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+
 import { ListComponent } from './list.component';
 
 @NgModule({
@@ -9,9 +8,7 @@ import { ListComponent } from './list.component';
     ListComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [ListComponent]
