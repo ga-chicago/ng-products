@@ -4,13 +4,20 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
 
-import {ListModule} from './list/list.module'
+import { ListModule } from './list/list.module'
 import { ListComponent } from './list/list.component'
+
+import { LoginModule } from './login/login.module'
+import { LoginComponent } from './login/login.component'
 
 const appRoutes: Routes = [
   {
     path: 'list',
     component: ListComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ]
 
@@ -21,6 +28,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     ListModule,
+    LoginModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
