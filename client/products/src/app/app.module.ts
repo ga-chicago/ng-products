@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'raincoats/:id',
+    component: DetailComponent
   }
 ]
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Http, Response} from '@angular/http';
+import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router'
 
 class Raincoat{
   id: number;
@@ -25,7 +27,7 @@ export class ListComponent {
   showPatchForm: boolean = false;
 
   // method that runs when Class is initialized
-  constructor(private http: Http){
+  constructor(private http: Http, private router: Router){
     this.getRaincoats();
   }
 
@@ -58,5 +60,9 @@ export class ListComponent {
   editRaincoat(raincoat){
     this.showPatchForm = true;
     this.updateRaincoat = Object.assign({},raincoat);
+  }
+
+  goToRaincoat(raincoat){
+    this.router.navigate(['/raincoats/',raincoat.id])
   }
 }

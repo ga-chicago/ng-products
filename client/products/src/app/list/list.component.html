@@ -1,3 +1,4 @@
+<a routerLink="/login">Login</a>
 <div>
   <button (click)="showPostForm = !showPostForm">New</button>
   <div *ngIf="showPostForm">
@@ -27,7 +28,7 @@
       <th>Price</th>
       <th>Hooded?</th>
     </tr>
-    <tr *ngFor="let raincoat of raincoats">
+    <tr *ngFor="let raincoat of raincoats" (click)="goToRaincoat(raincoat)">
       <td><img src="{{raincoat.image_url}}" width="50" height="50"></td>
       <td>{{raincoat.name}}</td>
       <td>{{raincoat.size}}</td>

@@ -1,0 +1,10 @@
+img{
+  display: inline;
+  float: left;
+}
+p{
+  float: left;
+}
+.price{
+  color: #B12704;
+}
