@@ -31,16 +31,30 @@ export class ListComponent {
   }
 
   getRaincoats(){
-    this.http.get('http://localhost:9393/raincoats/').subscribe(response =>
+    this.http.get('http://localhost:9393/raincoats?token=' + window.localStorage.token).subscribe(response => {
       this.raincoats = response.json()
-    )
+    }, err => {
+      //if permission denied
+      if(err.status === 403){
+        this.router.navigate(['/login'])
+      }else{
+        alert("ERROR");
+      }
+    })
   }
 
   postRaincoat(){
     this.showPostForm = false
-    this.http.post('http://localhost:9393/raincoats/', this.newRaincoat).subscribe(response =>
+    this.http.post('http://localhost:9393/raincoats?token=' + window.localStorage.token, this.newRaincoat).subscribe(response =>{
       this.raincoats = response.json()
-    )
+    }, err =>{
+      //if permission denied
+      if(err.status === 403){
+        this.router.navigate(['/login'])
+      }else{
+        alert("ERROR");
+      }
+    })
   }
 
   patchRaincoat(){
@@ -63,5 +77,10 @@ export class ListComponent {
 
   goToRaincoat(raincoat){
     this.router.navigate(['/raincoats/', raincoat.id])
+  }
+
+  logout(){
+    window.localStorage.clear();
+    this.router.navigate(['/login'])
   }
 }
