@@ -13,3 +13,6 @@ email VARCHAR(255), password_digest VARCHAR(255));
 
 INSERT INTO raincoats (name, size, color, price, hooded, image_url)
 VALUES ('North Face', 'XXL', 'Black', 200.00, true, 'https://theweinblog.files.wordpress.com/2012/06/raincoat.jpg');
+
+
+ALTER TABLE users ADD COLUMN token VARCHAR(255);

@@ -4,6 +4,7 @@ Bundler.require
 require './models/RaincoatModel'
 require './models/UserModel'
 
+require './controllers/ApplicationController'
 require './controllers/RaincoatController'
 require './controllers/UserController'
 
